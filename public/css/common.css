@@ -1,0 +1,33 @@
+body{
+    font-size: 16px;
+    font-weight: 400;
+    box-sizing: border-box;
+    font-family: "Noto Sans JP", sans-serif;
+    font-optical-sizing: auto;
+    letter-spacing: 0.1em;
+    background-color: #F8F9FA;
+    line-height: 2;
+}
+
+img {
+    width: 100%;
+}
+
+.w1200{
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 96%;
+}
+
+.txt-center {
+    text-align: center;
+}
+
+.mb150 {
+    margin-bottom: 150px;
+}
+
+.mb100 {
+    margin-bottom: 100px;
+}
+
