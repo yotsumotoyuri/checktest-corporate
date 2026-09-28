@@ -1,19 +1,35 @@
 /* 共通部分 */
-.ttl--ja{
+.ttl .ttl--ja{
     font-size: 2.5rem;
     line-height: 0.5;
 }
 
-.ttl--en{
+.ttl .ttl--en{
     font-size: 15px;
     border-bottom: 1px solid #F39800;
 }
 
-.sub-ttl {
+.ttl .sub-ttl {
     font-size: 23px;
 }
 
-.btn {
+.ttl2{
+    line-height: 0;
+    color: #003366;
+}
+
+.ttl2 .ttl--en{
+    font-size: 7rem;
+}
+
+.ttl2 .ttl--ja{
+    font-size: 25px;
+    letter-spacing: 0.1em;
+    padding-left: 10px;
+    border-bottom: 1px solid #F39800;
+}
+
+.btn a{
     display: inline-block;
     width: 200px;
     padding: 15px;
@@ -24,7 +40,7 @@
     text-decoration: none;
 }
 
-.btn:hover{
+.btn a:hover{
     opacity: 0.8;
 }
 
@@ -65,14 +81,61 @@
     line-height: 1.4;
 }
 
+/* ヘッダー */
+.header{
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.header__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-logo a {
+    color: #F8F9FA;
+    text-decoration: none;
+}
+
+.header-nav__list {
+    writing-mode: vertical-lr;
+    list-style: none;
+}
+
+.header-nav__list li {
+    margin-left: 30px;
+}
+
+.header-nav__list li a {
+    color: #F8F9FA;
+    text-decoration: none;
+}
+
+.header-nav__list li a:hover {
+    color: #F39800;
+}
+
+.header-nav__list li:first-child a{
+    color: #F39800;
+    border-top: 1px solid #F39800;
+    padding-top: 5px;
+}
+
 /* Business */
 .business__description{
     display: flex;
     justify-content: space-between;
-    gap: 1rem;
+    align-items: flex-start;
+    width: 100%;
 }
 
-.business__description .ttl{
+.ttl__wrapper{
+    width: 30%;
+}
+
+.business__txt{
     width: 65%;
 }
 
@@ -150,21 +213,97 @@
     min-height: 3em;
 }
 
-/* スライドショー */
-.slider {
+/* 採用情報 */
+#bc-slide{
     width: 100%;
-    overflow: hidden;
-    padding: 20px 0;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    transition: background-image 1.5s ease-in-out;
+}
+
+#bc-slide{
+    position: relative;
+}
+
+#bc-slide::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 51, 102, 0.5);
+    z-index: 1;
+}
+
+.bc-slide__wrapper{
+    position: absolute;
+    top: 50%;
+    transform: translateY(calc(-50% + 30px));
+    padding: 0 4% 0 0;
+    z-index: 2;
+}
+
+.bc-slide__flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bc-slide__h2{
+    font-size: 2.5rem;
+    writing-mode: vertical-rl;
+    vertical-align: top;
+    line-height: 1.4;
+    color: #F8F9FA;
+}
+
+.bc-slide__img{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.bc-slide__img img{
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    width: 24%;
+    object-position: center;
+}
+
+.bc-slider__box .ttl{
+    color: #F8F9FA;
+    padding: 0 0 4% 4%;
+}
+
+.recruit .btn{
+    padding-top:20px;
+}
+
+.recruit .btn a{
+    background-color: #F39800;
+}
+
+/* sdgs */
+.sdgs__txt{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .slider-track {
     display: flex;
-    width: calc(300px * 10);
+    width: calc(400px * 10);
     animation: scroll 20s linear infinite;
 }
 
+.slider{
+    overflow: hidden;
+    width: 100%;
+}
+
 .slide {
-    width: 300px;
+    width: 400px;
     flex-shrink: 0;
     padding: 0 10px;
 }
@@ -175,6 +314,55 @@
     display: block;
     aspect-ratio: 3 / 2;
     object-fit: cover;
+}
+
+/* お問い合わせ */
+.contact__wrapper{
+    background-color: #003366;
+    border-radius: 10px;
+    padding: 100px;
+}
+
+.contact__wrapper .ttl{
+    color: #F8F9FA;
+}
+
+.contact__content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact__description{
+    color: #F8F9FA;
+}
+
+.contact__content .contact__tel a{
+    color: #F8F9FA;
+    font-size: 35px;
+    text-decoration: none;
+}
+
+.contact__content .fa-phone{
+    font-size: 25px;
+    color: #F8F9FA;
+}
+
+.contact__content .btn a{
+    background-color: #F39800;
+}
+
+.contact__img{
+    width: 50%;
+}
+
+.contact__img img{
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+.contact__detail{
+    width: 45%;
 }
 
 /* アニメーションの内容 */
@@ -191,7 +379,44 @@
 
 /* モバイル */
 @media (max-width: 768px) {
+    /* 共通 */
+    .ttl .ttl--ja {
+        font-size: 2rem;
+        line-height: 0.1;
+    }
+
+    .ttl .ttl--en {
+        font-size: 11px;
+        border-bottom: 1px solid #F39800;
+    }
+
+    .ttl2 .ttl--en {
+        font-size: 5rem;
+    }
+
+    .ttl2 .ttl--ja {
+        font-size: 15px;
+    }
+
+    .btn a {
+        width: 300px;
+        padding: 10px;
+    }
+
+    /* トップ画面 */
+    .top__h2 {
+        font-size: 2.5rem;
+    }
+
     /* business */
+    .ttl__wrapper {
+        width: 100%;
+    }
+
+    .business__txt {
+        width: 100%;
+    }
+
     .business__description {
         flex-direction: column;
     }
@@ -208,5 +433,58 @@
     .works-case{
         flex-direction: column;
         grid-template-columns: 1fr;
+    }
+
+    /* recruit */
+    .bc-slide__flex {
+        flex-direction: column-reverse;
+    }
+
+    .bc-slide__h2{
+        font-size: 1.5rem;
+    }
+
+    .bc-slider__box{
+        margin-top: -100px;
+    }
+
+    .bc-slide__img img {
+        width: 30%;
+    }
+
+    .recruit .btn {
+        margin-top: 30px;
+        text-align: center;
+    }
+
+    /* sdgs */
+    .sdgs__txt{
+        flex-direction: column;
+    }
+
+    .sdgs .ttl2{
+        margin-bottom: 50px;
+    }
+
+    /* contact */
+    .contact__wrapper {
+        padding: 50px;
+    }
+    .contact__content {
+        flex-direction: column;
+    }
+
+    .contact__img {
+        width: 100%;
+    }
+
+    .contact__detail {
+        width: 100%;
+    }
+
+    .contact__tel{
+        line-height: 0;
+        margin: 0;
+        padding: 50px 0;
     }
 }

@@ -13,21 +13,191 @@ img {
     width: 100%;
 }
 
-.w1200{
+.txt-center {
+    text-align: center;
+}
+
+.w1200 {
     max-width: 1200px;
     margin: 0 auto;
     width: 96%;
-}
-
-.txt-center {
-    text-align: center;
 }
 
 .mb150 {
     margin-bottom: 150px;
 }
 
-.mb100 {
-    margin-bottom: 100px;
+.mb50 {
+    margin-bottom: 50px;
 }
 
+/* フッター */
+.footer__bc{
+    background-color: #003366;
+    padding: 50px 0;
+}
+
+.footer__wrapper{
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-logo{
+    color: #F8F9FA;
+}
+
+.footer-logo h2 a{
+    color: #F8F9FA;
+    text-decoration: none;
+}
+
+.footer-nav__list{
+    writing-mode: vertical-lr;
+    list-style: none;
+}
+
+.footer-nav__list li{
+    margin-left: 30px;
+}
+
+.footer-nav__list li a{
+    color: #F8F9FA;
+    text-decoration: none;
+}
+
+.footer-nav__list li a:hover{
+    color: #F39800;
+}
+
+.footer-nav__list li:first-child a {
+    color: #F39800;
+    border-top: 1px solid #F39800;
+    padding-top: 5px;
+}
+
+.footer__address{
+    line-height: 0;
+}
+
+.footer__address a {
+    color: #F8F9FA;
+    text-decoration: none;
+}
+
+/* ハンバーガーメニュー */
+.hamburger{
+    display: none;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    /* フッター */
+    .footer__wrapper{
+        flex-direction: column-reverse;
+    }
+
+    .footer-nav__list {
+        writing-mode: horizontal-tb;
+    }
+
+    .footer-nav__list li {
+        margin-left: 0;
+    }
+
+    .footer-nav__list li:first-child a {
+        border-top: none;
+        border-bottom: 1px solid #F39800;
+        padding-top: 5px;
+    }
+
+    .footer-logo{
+        margin-left: 30px;
+    }
+
+    /* ハンバーガーメニュー */
+    .hamburger{
+        display: block;
+        width: 30px;
+        height: 20px;
+        position: relative;
+        transition: 0.5s;
+        z-index: 2;
+    }
+
+    .hamburger span{
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: #F8F9FA;
+        position: absolute;
+        transition: 0.5s;
+    }
+
+    .hamburger span:nth-child(1){
+        top: 0;
+    }
+
+    .hamburger span:nth-child(2){
+        top: 9px;
+    }
+
+    .hamburger span:nth-child(3){
+        bottom: 0;
+    }
+
+    .hamburger.is-active span:nth-child(1){
+        transform: translateY(9px) rotate(45deg);
+    }
+
+    .hamburger.is-active span:nth-child(2){
+        opacity: 0;
+    }
+
+    .hamburger.is-active span:nth-child(3){
+        transform: translateY(-9px) rotate(-45deg);
+    }
+
+    .header-nav {
+        display: none;
+        /* 初期は非表示 */
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: #003366;
+        z-index: 4;
+    }
+
+    .header-nav.is-active {
+        display: block;
+    }
+
+    .header-nav__list li {
+        margin-left: 0 !important;
+    }
+
+    .header-nav__list li:first-child a {
+        border-top: 0 !important;
+        border-bottom: 1px solid #F39800;
+        padding-bottom: 5px;
+    }
+
+    .header-nav__list{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        gap: 30px;
+        writing-mode: horizontal-tb !important;
+    }
+
+    .header-nav__list li{
+        text-align: center;
+    }
+
+    .hamburger{
+        z-index: 5;
+    }
+}
