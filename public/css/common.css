@@ -84,6 +84,49 @@ img {
     text-decoration: none;
 }
 
+/* ヘッダー */
+.header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.header__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-logo a {
+    color: #F8F9FA;
+    text-decoration: none;
+}
+
+.header-nav__list {
+    writing-mode: vertical-lr;
+    list-style: none;
+    text-align: center;
+}
+
+.header-nav__list li {
+    margin-left: 30px;
+}
+
+.header-nav__list li a {
+    color: #F8F9FA;
+    text-decoration: none;
+}
+
+.header-nav__list li a:hover {
+    color: #F39800;
+}
+
+.header-nav__list li:first-child a {
+    color: #F39800;
+    border-top: 1px solid #F39800;
+    padding-top: 5px;
+}
+
 /* ハンバーガーメニュー */
 .hamburger{
     display: none;
@@ -191,6 +234,9 @@ img {
         height: 100%;
         gap: 30px;
         writing-mode: horizontal-tb !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100%;
     }
 
     .header-nav__list li{
