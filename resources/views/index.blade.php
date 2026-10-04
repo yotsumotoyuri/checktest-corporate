@@ -7,7 +7,14 @@
 @section('content')
     <div class="top mb150">
         <div class="top__mv">
-            <video src="{{ asset('video/top.mp4') }}" loop autoplay muted></video>
+            <video 
+            autoplay 
+            muted 
+            loop 
+            playsinline 
+            poster=""
+            >
+        <source src="https://res.cloudinary.com/o1ysvlxe/video/upload/v1791151264/top.mp4" type="video/mp4">
         </div>
         <header class="header">
             <div class="header__wrapper w1200">
