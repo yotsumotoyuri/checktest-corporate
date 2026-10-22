@@ -1,4 +1,4 @@
-FROM php:8.2-apache
+FROM php:8.4-apache
 
 # 1. 必要なLinuxパッケージとPHP拡張機能をインストール（変更なし）
 RUN apt-get update && apt-get install -y unzip git libzip-dev libpq-dev \
