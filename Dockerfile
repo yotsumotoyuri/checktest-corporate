@@ -21,7 +21,8 @@ RUN a2enmod rewrite
 COPY . /var/www/html/
 
 # サーバー内で「vendor」フォルダを生成
-RUN composer install --no-dev --optimize-autoloader --no-interaction
+RUN composer config policy.advisories.block false && \
+    COMPOSER_MEMORY_LIMIT=-1 composer install --no-dev --optimize-autoloader --no-interaction --no-audit
 
 # フォルダの権限（パーミッション）を設定
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
