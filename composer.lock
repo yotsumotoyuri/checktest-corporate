@@ -21,6 +21,8 @@
                 "shasum": ""
             },
             "require": {
+                "dasprid/enum": "^1.0.3",
+                "ext-iconv": "*",
                 "php": "^8.2"
             },
             "require-dev": {
