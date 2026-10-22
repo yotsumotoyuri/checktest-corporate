@@ -25,7 +25,7 @@ COPY composer.json composer.lock ./
 
 # 【最重要】監査機能をオフにし、メモリ制限と環境依存（バージョン違い）を完全に無視して強制インストール
 RUN composer config policy.advisories.block false && \
-    COMPOSER_MEMORY_LIMIT=-1 composer install --no-dev --optimize-autoloader --no-interaction --no-audit --ignore-platform-reqs
+    COMPOSER_MEMORY_LIMIT=-1 composer install --no-dev --optimize-autoloader --no-interaction --no-audit --ignore-platform-reqs --no-scripts
 
 # 残りの全ファイルをサーバーにコピー
 COPY . /var/www/html/
