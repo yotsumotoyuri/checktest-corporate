@@ -30,8 +30,6 @@ RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cac
 RUN chmod -R 775 /var/www/html/storage /var/www/html/bootstrap/cache
 
 # 7. 起動時にキャッシュ最適化とマイグレーションを実行してApacheを立ち上げる
-CMD php /var/www/html/artisan config:cache && \
-    php /var/www/html/artisan route:cache && \
-    php /var/www/html/artisan view:cache && \
+CMD php /var/www/html/artisan config:clear && \
     php /var/www/html/artisan migrate --force && \
     apache2-foreground
