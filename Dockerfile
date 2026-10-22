@@ -23,14 +23,14 @@ COPY . /var/www/html/
 # サーバー内で「vendor」フォルダを生成
 RUN composer install --no-dev --optimize-autoloader --no-interaction
 
-# フォルダの権限（パーミッション）を設定
+# 権限の設定
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
+RUN chmod -R 775 /var/www/html/storage /var/www/html/bootstrap/cache
 
-# ⚠️ Render用のポート番号を明示 ⚠️
-COPY entrypoint.sh /usr/local/bin/entrypoint.sh
-RUN chmod +x /usr/local/bin/entrypoint.sh
-ENTRYPOINT ["entrypoint.sh"]
-
-EXPOSE 10000
-CMD ["apache2-foreground"]
+# 【変更箇所】entrypoint.shを使わず、起動時にキャッシュ最適化とマイグレーションを実行してApacheを立ち上げる
+CMD php /var/www/html/artisan config:cache && \
+    php /var/www/html/artisan route:cache && \
+    php /var/www/html/artisan view:cache && \
+    php /var/www/html/artisan migrate --force && \
+    apache2-foreground
 
